@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "nan-ioc": "1.1.1",
+    "rest-lib": "1.2.3",
+    "sequelize": "^3.28.0",
+    "sequelize-cli": "^2.5.1"
+  },
+  "devDependencies": {}
+}
