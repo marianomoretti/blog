@@ -7,7 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
   },
-  "author": "",
+  "author": "Mariano Moretti",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marianomoretti/blog.git"
+  },
+  "engines": {
+    "node": "6.3.0",
+    "npm": "3.10.3"
+  },
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",

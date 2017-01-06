@@ -1,8 +1,8 @@
 // This module loads a config file in the current working directory matching the first command line argument.
-// I.e. either './dev.json' or './prod.json' based on the first command line argument.
-// If not set, it defaults to './dev.json'.
+// I.e. either './dev.js' or './prod.js' based on the first command line argument.
+// If not set, it defaults to './dev.js'.
 // Can load custom environment files as well, as long as the argument variable matches
-// a file in the current directory. E.g. './staging.json'
+// a file in the current directory. E.g. './staging.js'
 // Usage: calling code can just require this module, e.g. "var config = require('./config')"
 // assuming this file is named "index.js" and lives in a subdirectory named "config" of the app root.
 
@@ -16,21 +16,21 @@ program
   .parse(process.argv);
 
 let nodeEnv = program.env ? program.env : 'dev';
-let config = program.config ? path.normalize(program.config) : `./${nodeEnv}.json`;
-let config_file = program.config ? path.normalize(program.config) : `./${nodeEnv}.json`;
+let config = program.config ? path.normalize(program.config) : `./${nodeEnv}.js`;
+let config_file = program.config ? path.normalize(program.config) : `./${nodeEnv}.js`;
 
 try {
   config = require(config_file);
   console.log(`Config loaded for ${nodeEnv} environment.`);
 } catch (err) {
   if (err.code && err.code === 'MODULE_NOT_FOUND') {
-    console.error(`No config file matching ${nodeEnv}. Requires "${__dirname}/${nodeEnv}.json"`);
+    console.error(`No config file matching ${nodeEnv}. Requires "${__dirname}/${nodeEnv}.js"`);
     process.exit(1);
   } else {
     throw err;
   }
 }
-config.configFile = `./config/${nodeEnv}.json`;
+config.configFile = `./config/${nodeEnv}.js`;
 config.environment = nodeEnv;
 
 if (config.noProxy) {
