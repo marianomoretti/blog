@@ -8,7 +8,7 @@ const config = {
     "password": process.env['DBPASSWORD'],
     "migrations": {
       "path": "migrations"
-    }
+    },
     "options": {
       "host": process.env['DBHOST']
     }
