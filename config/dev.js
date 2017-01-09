@@ -10,7 +10,8 @@ const config = {
       "path": "migrations"
     },
     "options": {
-      "host": process.env['DBHOST']
+      "host": process.env['DBHOST'],
+      "dialect": "mysql"
     }
   }
 };
