@@ -6,12 +6,14 @@ const config = {
     "database": process.env['DBNAME'],
     "username": process.env['DBUSER'],
     "password": process.env['DBPASSWORD'],
+    "migrations": {
+      "path": "migrations"
+    }
     "options": {
       "host": process.env['DBHOST']
     }
   }
 };
 
-console.log("config", JSON.stringify(config, null, 2));
 
 module.exports = config;
