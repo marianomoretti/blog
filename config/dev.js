@@ -12,4 +12,6 @@ const config = {
   }
 };
 
+console.log("config", JSON.stringify(config, null, 2));
+
 module.exports = config;
